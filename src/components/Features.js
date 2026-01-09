@@ -112,27 +112,32 @@ const Features = () => {
                   {service.icon}
                 </motion.div>
 
-                {/* Professional title with clear animation */}
-                <motion.h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors duration-300">
-                  {service.title.split(' ').map((word, wordIndex) => (
-                    <motion.span
-                      key={wordIndex}
-                      className="inline-block mr-2"
-                      initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ 
-                        delay: 1 + index * 0.5 + wordIndex * 0.5, 
-                        duration: 0.8,
-                        ease: "easeOut"
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
+                {/* Professional title with gradient animation */}
+                <motion.h3 className="text-2xl font-bold mb-4">
+                  <motion.span
+                    style={{
+                      background: 'linear-gradient(45deg, #00ffff, #0080ff, #4040ff, #8000ff, #ff0080, #00ffff)',
+                      backgroundSize: '400% 400%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      textShadow: '0 0 20px rgba(0, 255, 255, 0.5)'
+                    }}
+                    animate={{
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                  >
+                    {service.title}
+                  </motion.span>
                 </motion.h3>
 
                 {/* Animated description with typewriter effect */}
-                <motion.div className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
+                <motion.div className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300 italic">
                   {service.description.split(' ').map((word, wordIndex) => (
                     <motion.span
                       key={wordIndex}

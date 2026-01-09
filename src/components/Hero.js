@@ -30,7 +30,7 @@ const Hero = () => {
   }, [displayText, isDeleting, currentRole, roles]);
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden pt-20 md:pt-0">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
